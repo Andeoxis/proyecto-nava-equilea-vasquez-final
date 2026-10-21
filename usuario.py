@@ -9,13 +9,13 @@ def menu_usuario():
     while True:
         try:
 
-            print("\n--- MENU USUARIO ---")
+            print("\n--- MENU DE USUARIO ---")
             print("1. Ver información")
             print("2. Consultar datos")
             print("3. Realizar una operación")
             print("4. Cerrar sesión")
 
-            opcion = input("Seleccione una opción: ")
+            opcion = int(input("Seleccione una opción: "))
 
             match opcion:
                 case 1:
