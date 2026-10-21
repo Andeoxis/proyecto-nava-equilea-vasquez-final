@@ -1,5 +1,5 @@
 usuarios = ["admin", "usuario"]
-contraseñas = ["1234", "2468"]
+contraseñas = ["1234", "1234"]
 
 
 def login():
@@ -10,8 +10,8 @@ def login():
         if usuario == usuarios[i] and contraseña == contraseñas[i]:
 
             if usuario == "admin":
-                print("--- Acceso concedido ---")
-                print("Bienvenido como administrador")
+                print("--- Acceso concedido ---\n")
+                print("Bienvenido administrador")
                 return "administrador"
 
             else:
@@ -24,7 +24,7 @@ def login():
 
 
 def registrar_usuario():
-    nuevo_usuario = input("Ingrese el usuario: ").strip().lower()
+    nuevo_usuario = input("\nIngrese el usuario: ").strip().lower()
 
     if nuevo_usuario in usuarios:
         print("El usuario ya existe")
@@ -45,7 +45,7 @@ def registrar_usuario():
 
 
 def mostrar_usuarios():
-    print("--- USUARIOS REGISTRADOS ---")
+    print("\n--- USUARIOS REGISTRADOS ---")
 
     for i in range(len(usuarios)):
         print("Usuario:", usuarios[i])
@@ -53,21 +53,19 @@ def mostrar_usuarios():
 
 
 def buscar_usuario():
-    buscar_u = input(
-        "Ingrese el nombre de usuario: "
-    ).strip().lower()
+    buscar_u = input("\nIngrese el nombre de usuario: ").strip().lower()
 
     if buscar_u in usuarios:
         posicion = usuarios.index(buscar_u)
 
-        print("Usuario encontrado...")
+        print("Usuario encontrado")
         print("Usuario:", usuarios[posicion])
         print("Contraseña:", contraseñas[posicion])
 
     else:
         print("Usuario no encontrado...")
 def modificar_usuario():
-    buscar_u = input("Ingrese el usuario que desea modificar: ").strip().lower()
+    buscar_u = input("\nIngrese el usuario que desea modificar: ").strip().lower()
 
     if buscar_u in usuarios:
         posicion = usuarios.index(buscar_u)
@@ -87,7 +85,7 @@ def modificar_usuario():
 
 
 def eliminar_usuario():
-    buscar_u = input("Ingrese el usuario que desea eliminar: ").strip().lower()
+    buscar_u = input("\nIngrese el usuario que desea eliminar: ").strip().lower()
 
     if buscar_u in usuarios:
         posicion = usuarios.index(buscar_u)
@@ -102,18 +100,18 @@ def eliminar_usuario():
 
 
 def cerrar_sesion():
-    print("Sesión cerrada correctamente...")
+    print("\nSesión cerrada")
+    exit()
 
 
 def ver_informacion():
-    print("--- INFORMACIÓN DEL USUARIO ---")
-    print("Bienvenido al sistema.")
+    print("\n--- INFORMACIÓN DEL USUARIO ---")
     print("Usted ha iniciado sesión como usuario.")
 def consultar_datos():
-    print("--- CONSULTAR DATOS ---")
+    print("\n--- CONSULTAR DATOS ---")
     print("Consulta realizada correctamente...")
 
 
 def realizar_operacion():
-    print("--- REALIZAR OPERACIÓN ---")
+    print("\n--- REALIZAR OPERACIÓN ---")
     print("Operación realizada correctamente...")
