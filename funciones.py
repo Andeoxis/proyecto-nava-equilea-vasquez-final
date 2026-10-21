@@ -4,7 +4,7 @@ contraseñas = ["1234", "1234"]
 
 def login():
     usuario = input("Ingrese su usuario: ").strip().lower()
-    contraseña = input("Ingrese la contraseña de cuatro dígitos: ").strip()
+    contraseña = input("Ingrese su contraseña: ").strip()
 
     for i in range(len(usuarios)):
         if usuario == usuarios[i] and contraseña == contraseñas[i]:
@@ -16,7 +16,7 @@ def login():
 
             else:
                 print("--- Acceso concedido ---")
-                print("Bienvenido como usuario")
+                print("Bienvenido usuario")
                 return "usuario"
 
     print("Contraseña o usuario incorrecto")
@@ -31,8 +31,7 @@ def registrar_usuario():
         return
 
     nueva_contraseña = input(
-        "Ingrese la contraseña de cuatro dígitos: "
-    ).strip()
+        "Ingrese la contraseña de cuatro dígitos: ").strip()
 
     if len(nueva_contraseña) != 4 or not nueva_contraseña.isdigit():
         print("La contraseña debe tener cuatro dígitos")
@@ -71,9 +70,7 @@ def modificar_usuario():
         posicion = usuarios.index(buscar_u)
 
         nuevo_usuario = input("Ingrese el nuevo usuario: ").strip().lower()
-        nueva_contraseña = input(
-            "Ingrese la nueva contraseña de cuatro dígitos: "
-        ).strip()
+        nueva_contraseña = input("Ingrese la nueva contraseña de cuatro dígitos: ").strip()
 
         usuarios[posicion] = nuevo_usuario
         contraseñas[posicion] = nueva_contraseña
