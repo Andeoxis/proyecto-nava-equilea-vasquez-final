@@ -4,7 +4,7 @@ from usuario import menu_usuario
 
 def main():
 
-    print("--- BIENVENIDO/A AL SISTEMA ---")
+    print("--- BIENVENIDO/A AL SISTEMA ---\n")
 
     tipo_usuario = login()
 
