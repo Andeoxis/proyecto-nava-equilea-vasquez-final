@@ -27,6 +27,7 @@ def menu_administrador():
                     eliminar_usuario()
                 case 6:
                     cerrar_sesion()
+                    break
                 case _:
                     raise ValueError
         except ValueError:
