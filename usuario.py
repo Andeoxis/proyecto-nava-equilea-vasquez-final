@@ -1,8 +1,4 @@
-from funciones import ver_informacion
-from funciones import consultar_datos
-from funciones import realizar_operacion
-from funciones import cerrar_sesion
-
+from funciones import platos, platos_especiales, cerrar_sesion, ver_pedido
 
 def menu_usuario():
 
@@ -10,22 +6,23 @@ def menu_usuario():
         try:
 
             print("\n--- MENU DE USUARIO ---")
-            print("1. Ver información")
-            print("2. Consultar datos")
-            print("3. Realizar una operación")
+            print("1. Platos")
+            print("2. Platos especiales")
+            print("3. Ver carrito y confirmar pedido")
             print("4. Cerrar sesión")
 
             opcion = int(input("Seleccione una opción: "))
 
             match opcion:
                 case 1:
-                    ver_informacion()
+                    platos()
                 case 2:
-                    consultar_datos()
+                    platos_especiales()
                 case 3:
-                    realizar_operacion()
+                    ver_pedido()
                 case 4:
                     cerrar_sesion()
+                    break
                 case _:
                     raise ValueError
                 
