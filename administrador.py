@@ -1,35 +1,56 @@
-from funciones import registrar_usuario, mostrar_usuarios, buscar_usuario, modificar_usuario, eliminar_usuario, cerrar_sesion
+from funciones import (
+    gestionar_personal,
+    gestionar_menu,
+    gestionar_pedidos,
+    gestionar_costos,
+    comprar_comida,
+    ver_carrito_y_confirmar,
+    cerrar_sesion
+)
 
 def menu_administrador():
     while True:
-        try:
+        print("\n--- MENU ADMINISTRADOR ---")
+        print("1. Gestionar Personal")
+        print("2. Gestionar Menu")
+        print("3. Gestionar Pedidos")
+        print("4. Gestionar Costo de los Platos")
+        print("5. Menú de Usuario")
+        print("6. Cerrar sesion")
 
-            print("\n--- MENU ADMINISTRADOR ---")
-            print("1. Registrar usuario")
-            print("2. Mostrar usuarios")
-            print("3. Buscar usuario")
-            print("4. Modificar usuario")
-            print("5. Eliminar usuario")
-            print("6. Cerrar sesión")
+        opcion = input('Seleccione una opcion: ')
 
-            opcion = int(input('Seleccione una opcion: '))
+        if opcion == '1':
+            gestionar_personal()
+        elif opcion == '2':
+            gestionar_menu()
+        elif opcion == '3':
+            gestionar_pedidos()
+        elif opcion == '4':
+            gestionar_costos()
+        elif opcion == '5':
+            menu_usuario_desde_admin()
+        elif opcion == '6':
+            cerrar_sesion()
+            break
+        else:
+            print('Opcion invalida, intente nuevamente.')
 
-            match opcion:
-                case 1:
-                    registrar_usuario()
-                case 2:
-                    mostrar_usuarios()
-                case 3:
-                    buscar_usuario()
-                case 4:
-                    modificar_usuario()
-                case 5:
-                    eliminar_usuario()
-                case 6:
-                    cerrar_sesion()
-                    break
-                case _:
-                    raise ValueError
-        except ValueError:
-            print('Dato erroneo, intente nuevamente')
-            print()
+
+def menu_usuario_desde_admin():
+    while True:
+        print("\n--- MENÚ DE COMPRA (ADMIN) ---")
+        print("1. Comprar comida")
+        print("2. Ver carrito y confirmar pedido")
+        print("3. Volver al menu de Admin")
+
+        opc = input("Seleccione una opcion: ")
+
+        if opc == '1':
+            comprar_comida()
+        elif opc == '2':
+            ver_carrito_y_confirmar()
+        elif opc == '3':
+            break
+        else:
+            print("Opcion no valida.")
